@@ -20,8 +20,13 @@ yarn-error.log
 /resources/frontend/tmp
 /resources/frontend/out-tsc
 
+/resources/webapp/dist
+/resources/webapp/tmp
+/resources/webapp/out-tsc
+
 # dependencies
 /resources/frontend/node_modules
+/resources/webapp/node_modules
 
 # IDEs and editors
 /.idea
