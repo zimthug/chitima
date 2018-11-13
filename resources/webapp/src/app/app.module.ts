@@ -1,7 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
@@ -16,6 +15,9 @@ import { ErrorInterceptor } from './shared/error-interceptor';
 import { JwtInterceptor } from './shared/jwt-interceptor';
 import { UserDataComponent } from './components/user-data/user-data.component';
 
+/*
+ //Moved these to app-routing.modules.ts
+
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -25,6 +27,7 @@ export const routes: Routes = [
 
   { path: '**', component: HomeComponent }
 ]
+*/
 
 @NgModule({
   declarations: [
@@ -41,7 +44,7 @@ export const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientModule,
-    RouterModule.forRoot(routes),
+    //RouterModule.forRoot(routes),
     FormsModule,
   ],
   providers: [
