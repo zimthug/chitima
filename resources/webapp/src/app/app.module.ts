@@ -1,6 +1,6 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -14,14 +14,16 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 
 import { ErrorInterceptor } from './shared/error-interceptor';
 import { JwtInterceptor } from './shared/jwt-interceptor';
+import { UserDataComponent } from './components/user-data/user-data.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: RegisterComponent },
-  { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard]  },
-  
-  {path: '**', component: HomeComponent}
+  { path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard] },
+  { path: 'userData', component: UserDataComponent },
+
+  { path: '**', component: HomeComponent }
 ]
 
 @NgModule({
@@ -31,6 +33,7 @@ export const routes: Routes = [
     RegisterComponent,
     HomeComponent,
     WelcomeComponent,
+    UserDataComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +42,7 @@ export const routes: Routes = [
     HttpClientModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
+    FormsModule,
   ],
   providers: [
     Title,

@@ -1,0 +1,9 @@
+<!--input type="text" name="name" id="field_name" [(ngModel)]="user.name" required maxlength="60" / -->
+
+
+<div *ngIf="user" >
+  <!--span *ngFor="let player of user"-->
+  <span>
+  <h3>We know you {{ user.name }} </h3>
+  </span>
+</div>
