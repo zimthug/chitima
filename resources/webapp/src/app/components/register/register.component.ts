@@ -16,6 +16,7 @@ export class RegisterComponent implements OnInit {
   submitted = false;
   returnUrl: string;
   error = '';
+  success = '';
   user: IUser;
 
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) { }
@@ -42,7 +43,12 @@ export class RegisterComponent implements OnInit {
 
     this.userService.registerUser(this.registerForm.value).pipe(first()).subscribe(
       data => {
-        this.router.navigate(['/login']);
+        this.success = "User Created Successfully";
+        setTimeout(() => {
+          this.router.navigate(['/login']);
+        },
+          3000);
+
       }, error => {
         this.error = error;
       }

@@ -3,7 +3,7 @@
 
   <label for="name" class="sr-only">Full name</label>
   <input type="text" id="name" name="name" class="form-control" placeholder="Full name" required autofocus [ngClass]="{ 'is-invalid': submitted && f.name.errors }"
-    formControlName="name"  />
+    formControlName="name" />
   <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
     <div *ngIf="f.name.errors.required">Name is Required</div>
   </div>
@@ -17,7 +17,7 @@
 
   <label for="password" class="sr-only">Password</label>
   <input type="password" id="password" name="password" class="form-control" placeholder="Password" required [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-    formControlName="password"  />
+    formControlName="password" />
 
   <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
     <div *ngIf="f.password.errors.required">Password is Required</div>
@@ -26,5 +26,7 @@
   <button class="btn btn-lg btn-primary btn-block" type="submit" (click)='register()'>Sign Up</button>
 
   <div *ngIf="error" class="alert alert-danger">{{error}}</div>
+
+  <div *ngIf="success" class="alert-success">{{success}}</div>
 
 </form>
