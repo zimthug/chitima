@@ -1,4 +1,5 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -44,8 +45,8 @@ export const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientModule,
-    //RouterModule.forRoot(routes),
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     Title,

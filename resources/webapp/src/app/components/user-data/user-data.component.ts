@@ -22,7 +22,7 @@ export class UserDataComponent implements OnInit {
   }
 
   public getUserData() {
-    this.userService.getUserData().subscribe((data: Array<object>) => {
+    this.userService.getUser().subscribe((data: Array<object>) => {
       this.user = data["user"];
     });
   }
