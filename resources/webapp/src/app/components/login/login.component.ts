@@ -51,7 +51,11 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.error = error;
+          if (error == "Unauthorized") {
+            this.error = "Invalid Email or Password";
+          } else {
+            this.error = error;
+          }
           //this.loading = false;
         });
   }
